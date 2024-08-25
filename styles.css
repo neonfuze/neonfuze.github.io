@@ -1,4 +1,4 @@
-/* styles.css */
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -145,4 +145,51 @@ hr {
     height: 1px;
     background: #e0e0e0;
     margin: 30px 0;
+}
+
+/* Certificates List Styles */
+.certificates-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.certificates-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.certificate-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.harvard-emblem {
+    max-width: 40px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.certificate-link strong {
+    font-size: 1.1em;
+    color: #111;
+}
+
+.certificate-link span {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.certificate-link:hover {
+    color: #0056b3;
+}
+
+.certificate-link:hover .harvard-emblem {
+    filter: brightness(0.9);
 }
