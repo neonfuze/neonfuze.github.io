@@ -1,11 +1,10 @@
-// Scroll function from Donovan Hutchinson's Level Up Your CSS Animation Skills Udemy course
-// Detect request animation frame
+// Scroll function using requestAnimationFrame
 const scroll =
   window.requestAnimationFrame ||
-  // IE Fallback
   function (callback) {
     window.setTimeout(callback, 1000 / 60);
   };
+
 const elementsToShow = document.querySelectorAll(".show-on-scroll");
 
 function loop() {
@@ -23,22 +22,17 @@ function loop() {
 // Call the loop for the first time
 loop();
 
-// Helper function from: http://stackoverflow.com/a/7557433/274826
+// Helper function to check if an element is in the viewport
 function isElementInViewport(el) {
-  // special bonus for those using jQuery
   if (typeof jQuery === "function" && el instanceof jQuery) {
     el = el[0];
   }
   const rect = el.getBoundingClientRect();
   return (
     (rect.top <= 0 && rect.bottom >= 0) ||
-    (rect.bottom >=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.top <=
-        (window.innerHeight || document.documentElement.clientHeight)) ||
-    (rect.top >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight))
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
+    (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
   );
 }
 
@@ -48,12 +42,20 @@ const socialContact = document.getElementById("social-contact");
 const contactForm = document.getElementById("contact");
 
 function scrollToForm() {
-  contactForm.scrollIntoView({ behavior: "smooth" }); // Top
+  contactForm.scrollIntoView({ behavior: "smooth" });
 }
 
-headerBtn.addEventListener("click", scrollToForm);
-socialContact.addEventListener("click", scrollToForm);
+// Add event listeners for smooth scrolling
+if (headerBtn) {
+  headerBtn.addEventListener("click", scrollToForm);
+}
 
-// No bots!
+if (socialContact) {
+  socialContact.addEventListener("click", scrollToForm);
+}
+
+// Remove contact form no bots element if it exists
 const contactFormNoBots = document.getElementById("contact-form-no-bots");
-contactFormNoBots.parentNode.removeChild(contactFormNoBots);
+if (contactFormNoBots) {
+  contactFormNoBots.parentNode.removeChild(contactFormNoBots);
+}
