@@ -196,8 +196,8 @@ hr {
 
 /* Style for individual certificate images */
 .certificate-link img {
-    max-width: 50px; /* Adjust this value as needed */
-    height: auto;
+    max-width: 30px; /* Smaller size */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Space between the image and the text */
     border-radius: 4px; /* Optional: Add rounded corners */
 }
@@ -210,15 +210,15 @@ hr {
 }
 
 .certificate-link strong {
-    font-size: 1.1em;
+    font-size: 1em; /* Adjust if needed */
     color: #111;
 }
 
 .certificate-link span {
     display: block;
-    font-size: 0.9em;
+    font-size: 0.85em; /* Slightly smaller text */
     color: #666;
-    margin-top: 5px;
+    margin-top: 3px; /* Adjust spacing */
 }
 
 .certificate-link:hover {
