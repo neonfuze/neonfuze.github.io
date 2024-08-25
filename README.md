@@ -11,3 +11,4 @@ HTML5 & CSS3: For structuring and styling the website.
 JavaScript (ES6+): For adding interactivity, animations, and smooth scrolling.
 
 Host: netlify
+LLM: claud.ai and gpt 4.0
