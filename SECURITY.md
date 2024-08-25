@@ -12,6 +12,11 @@ currently being supported with security updates.
 | 4.0.x   | :white_check_mark: |
 | < 4.0   | :x:                |
 
+Notes:
+Supported versions receive regular security updates and patches.
+Unsupported versions do not receive updates or support. We recommend upgrading to a supported version to ensure your system is secure.
+For more details on upgrading or support, please contact us at [ndetroia@gmail.com] or refer to our [documentation/upgrade guide].
+
 ## Reporting a Vulnerability
 
 Reporting a Vulnerability
