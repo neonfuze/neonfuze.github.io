@@ -4,9 +4,9 @@ Using netlify as host
 
 Welcome to Neon Fuze, my personal portfolio website where I showcase my resume, projects, and creative work. This website is designed to provide a comprehensive overview of my professional skills, experiences, and the projects I've worked on.
 
-Table of Contents
+Table of Contents:
 
-About
+{About}
 Features
 Technologies Used
 Setup Instructions
