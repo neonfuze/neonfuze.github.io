@@ -158,6 +158,38 @@ footer {
     line-height: 1.6;
 }
 
+.documents-section {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.documents-section h2 {
+    font-size: 1.5em;
+    color: #0056b3;
+}
+
+.documents-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.documents-list li {
+    margin: 10px 0;
+}
+
+.documents-list a {
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 1em;
+}
+
+.documents-list a:hover {
+    text-decoration: underline;
+}
+
+
 
 hr {
     border: 0;
