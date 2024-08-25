@@ -194,18 +194,12 @@ hr {
     color: #333;
 }
 
-/* Certificates List Styles */
-.certificates-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.certificates-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+/* Style for individual certificate images */
+.certificate-link img {
+    max-width: 50px; /* Adjust this value as needed */
+    height: auto;
+    margin-right: 10px; /* Space between the image and the text */
+    border-radius: 4px; /* Optional: Add rounded corners */
 }
 
 .certificate-link {
@@ -213,12 +207,6 @@ hr {
     align-items: center;
     text-decoration: none;
     color: #333;
-}
-
-.harvard-emblem {
-    max-width: 40px;
-    margin-right: 15px;
-    border-radius: 4px;
 }
 
 .certificate-link strong {
@@ -237,6 +225,6 @@ hr {
     color: #0056b3;
 }
 
-.certificate-link:hover .harvard-emblem {
+.certificate-link:hover img {
     filter: brightness(0.9);
 }
