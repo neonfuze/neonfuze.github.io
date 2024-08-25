@@ -6,12 +6,12 @@ Welcome to Neon Fuze, my personal portfolio website where I showcase my resume, 
 
 Table of Contents:
 
-{About}
-Features
-Technologies Used
-Setup Instructions
-Usage
-Contact
+[About]
+[Features]
+[Technologies Used]
+[Setup Instructions]
+[Usage]
+[Contact]
 
 About
 
