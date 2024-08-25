@@ -7,21 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="profile-card">
         <img src="img/website-profile.png" alt="Profile Image" class="profile-image" />
+        <div class="profile-info">
+            <h1>Nicolas DeTroia</h1>
+            <p>Economics Student at The College of New Jersey</p>
+            <p>Cedar Rapids, Iowa, United States</p>
+            <p class="links">
+                <a href="https://www.youtube.com/@Troja885" target="_blank">YouTube</a> | 
+                <a href="https://www.linkedin.com/in/nic-detroia-472683252/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </div>
 
-        <h1>Nicolas DeTroia</h1>
-        <p class="links">
-            <a href="https://www.youtube.com/@Troja885" target="_blank">YouTube</a>
-            <a href="https://www.linkedin.com/in/nic-detroia-472683252/" target="_blank">LinkedIn</a>
-        </p>
+    <nav class="tabs">
+        <a href="#" class="tab-link active">About</a>
+        <a href="#projects" class="tab-link">Projects</a>
+        <a href="#bookshelf" class="tab-link">Bookshelf</a>
+        <a href="#blog" class="tab-link">Blog</a>
+    </nav>
 
-        <section class="about-me">
+    <div class="container">
+        <section id="about" class="content-section">
             <h2>About Me</h2>
             <p>Hi, I'm Nic! I'm a rising sophomore at The College of New Jersey, where I'm studying economics. With that being said, I have a strong desire to build my community and strongly enjoy collaborating with passionate individuals on impactful projects. I'm fluent in English, conversational in Italian, and learning Chinese. Do not feel hesitant to reach out to me at ndetroia@gmail.com or detroin1 [at] tcnj [dot] edu. Thank you and have a great day!</p>
         </section>
 
-        <section class="documents-section">
+        <section id="documents" class="content-section">
             <h2>Documents</h2>
             <ul class="documents-list">
                 <li><a href="path-to-your-document1.pdf" target="_blank">Resume</a></li>
@@ -30,7 +42,7 @@
             </ul>
         </section>
 
-        <section class="experience-section">
+        <section id="experience" class="content-section">
             <h2>Experience</h2>
             <div class="experience">
                 <h3><a href="https://jobs.bestbuy.com/bby?id=career_area&content_id=a659e9a11b82b010b4c011f18c4bcb1e&site=retail&spa=1&s=req_id_num&country=US&career_site=" target="_blank">Best Buy, Co</a></h3>
@@ -40,18 +52,11 @@
             <div class="experience">
                 <h3><a href="https://www.ebay.com/str/bontiful" target="_blank">eBay Business</a></h3>
                 <p><strong>October 2022 - Present</strong> - <i>Operations Manager</i></p>
-                <p>Strategically invested <i>high school level</i> capital into the eBay business, focusing on shoes, video game consoles, collectibles, and clothing. Expertise in scaling the company to over 900+ items sold and achieving over $100K+ in revenue. Skilled in managing inventory and marketing our eBay store, where we are a verified top seller. Sharing a percentage of profits to maximize returns while leveraging market trends and ensuring a seamless, excellent experience for consumers to drive sustained success.</p>
+                <p>Strategically invested capital into the eBay business, focusing on shoes, video game consoles, collectibles, and clothing. Expertise in scaling the company to over 900+ items sold and achieving over $100K+ in revenue. Skilled in managing inventory and marketing our eBay store, where we are a verified top seller.</p>
             </div>
-            <!-- Uncomment if needed
-            <div class="experience">
-                <h3>Troja (tro-yah) Investing</h3>
-                <p><strong>August 2024 - Present</strong> - Founder</p>
-                <p>(In conjunction with TrojaSales and Abetone)</p>
-            </div>
-            -->
         </section>
 
-        <section class="education-section">
+        <section id="education" class="content-section">
             <h2>Education</h2>
             <div class="education">
                 <h3><a href="https://www.princetonk12.org/princeton-high-school" target="_blank">Princeton High School</a></h3>
@@ -62,17 +67,9 @@
                 <p><strong>Class of 2027</strong></p>
                 <p>Economics B.A and Computer Science Minor</p>
             </div>
-            <!-- Uncomment if needed
-            <div class="education">
-                <h3><a href="https://economics.illinois.edu/academics/undergraduate-program" target="_blank">University of Illinois Urbana-Champaign</a></h3>
-                <p><strong>Class of 2027</strong></p>
-                <p>Economics B.A from the College of Liberal Arts & Sciences</p>
-                <p>Perspective Minor in Computer Science from the Sieban School of Computing (Grainger College of Engineering)</p>
-            </div>
-            -->
         </section>
 
-        <section class="skills-section">
+        <section id="skills" class="content-section">
             <h2>Skills</h2>
             <ul class="skills-list">
                 <li>
@@ -83,7 +80,6 @@
                     <img src="path-to-language-image.png" alt="Python Logo" class="skill-image">
                     <span class="skill-name">Python</span>
                 </li>
-                <!-- Add more skills as needed -->
             </ul>
             <div class="languages-section">
                 <h3>Languages</h3>
@@ -104,7 +100,7 @@
             </div>
         </section>
 
-        <section class="certifications-section">
+        <section id="certifications" class="content-section">
             <h2>Certifications</h2>
             <ul class="certificates-list">
                 <li>
@@ -124,7 +120,7 @@
             </ul>
         </section>
 
-        <section class="projects-section">
+        <section id="projects" class="content-section">
             <h2>Projects</h2>
             <ul>
                 <li><strong>PcPartPicker (Python):</strong> <a href="https://github.com/niccoding101/AbetoneTechnologies/blob/main/PCPartPicker.py" target="_blank">GitHub Link</a></li>
@@ -132,41 +128,28 @@
             </ul>
         </section>
 
-        <hr>
-
-        <!-- Uncomment if needed
-        <section class="technical-writing-section">
-            <h2 id="Technical-Writing">Technical Writing</h2>
-            <p>
-                <a href="project4.ssndatabase.html#Technical-Writing" class="back-button">SSN Database Using C++</a>
-                <p>This project demonstrates how to create a simulated SSN database using C++.</p>
-                <a href="Project1.practicingmatrices.html" class="back-button">Matrices in C++</a>
-            </p>
-        </section>
-
-        <hr>
-
-        <section class="personal-writing-section">
-            <h2>Personal Writing</h2>
-            <ul>
-                <li>
-                    <a href="The 4x4x48 Challenge.pdf" target="_blank">Willpower: Overcoming Procrastination and Reaching Your Full Potential</a><br>
-                    <a href="https://www.amazon.com/Cant-Hurt-Me-Master-Your/dp/1544512279" target="_blank">Inspiration</a>
-                </li>
-                <li>
-                    <a href="ADHD NEUROSCIENCE APPROACH.pdf" target="_blank">ADHD: Neuroscience Approach</a><br>
-                    <a href="https://www.youtube.com/watch?v=hFL6qRIJZ_Y" target="_blank">Inspiration</a>
-                </li>
-                <li>
-                    <a href="Economics.pdf" target="_blank">Economics</a>
-                </li>
-            </ul>
-        </section>
-        -->
-
         <footer>
             <p>© 2024 Nicolas DeTroia</p>
         </footer>
     </div>
+
+    <script>
+        // JavaScript to handle tab switching
+        document.querySelectorAll('.tab-link').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+
+                this.classList.add('active');
+                const targetSection = this.getAttribute('href').substring(1);
+                document.getElementById(targetSection).style.display = 'block';
+            });
+        });
+
+        // Set initial visibility for content sections
+        document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+        document.getElementById('about').style.display = 'block'; // Show "About" section by default
+    </script>
 </body>
 </html>
