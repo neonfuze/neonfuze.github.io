@@ -1,118 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Nicolas DeTroia</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Flame Bot is a multipurpose bot with Moderation, Leveling System, Fun commands, Utility Commands, Giveaways command, Music, and more!">
+    <meta name="keywords" content="Discord, Discordbot, Discord, bot, Discord, Music, Bot, Discord, Musicbot, Musicbot, Music, bot">
+    <meta property="og:image" content="https://images-ext-1.discordapp.net/external/_RUs495N4XCOXvIGq5NPHavewThI3Y6OjeeWg1Hw4GY/https/media.discordapp.net/attachments/784784343863263246/806784598503718943/flame_website_logo.gif">
+    <meta http-equiv="content-language" content="en">
+    <meta name="robots" content="index, follow">
+    <link rel='stylesheet' id='wpzoom-social-icons-genericons-css' href='http://glutenfreeliv.in/wp/wp-content/plugins/social-icons-widget-by-wpzoom/assets/css/genericons.css?ver=1605542014' type='text/css' media='all' />
+
+    <title>Flame Bot - Discord Bot</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/796358841038143488/798846894461550622/flame.png?width=427&height=427">
+    <!--using FontAwesome--------------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 </head>
-<body>
-   <div class="container">
-      
-       <img src="images/website-profile.png" alt="Profile Image" class="profile-image"> 
 
-       <h1>Nicolas DeTroia</h1>
+<body id="body-pd">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="https://dsc.gg/flamebot" class="nav__logo">Flame Bot </a>
+                </div>
+                <div class="nav__list">
+                    <a href="index.html" class="nav__link active">
+                        <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Home</span>
+                    </a>
+                    <a href="https://flamebot.gitbook.io/flame-bot/" target="_blank" class="nav__link">
+                        <ion-icon name="bar-chart-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Commands</span>
+                    </a>
+                    <a href="#about" class="nav__link">
+                        <ion-icon name="information-circle-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">About Flame Bot</span>
+                    </a>
+                    <a href="#introduction" class="nav__link">
+                        <ion-icon name="logo-youtube" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Introduction</span>
+                    </a>
+                    <a href="#Features" class="nav__link">
+                        <ion-icon name="layers-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Features</span>
+                    </a>
+                    <a href="#client" class="nav__link">
+                        <ion-icon name="ribbon-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Developer</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-       <p class="links">
-         <a href="https://www.youtube.com/@Troja885" target="_blank">YouTube</a> |
-         <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn (Down 25/8/24)</a> | 
-         <a href="https://github.com/neonfuze" target="_blank">Github Profile</a> | 
-       </p>
+    <a href="index.html" id="scroll-up" style="display: inline;"></a>
+    <!-- Maker Badge -->
+    <script type="text/javascript">
+        (function (w, d) {
+            w.makerbadge = {}, methods = ['init'];
+            w.makerbadge._c = [];
+            methods.forEach(m => { w.makerbadge[m] = function () { w.makerbadge._c.push([m, arguments]); } });
+            var el = d.createElement('script'); el.type = "text/javascript"; el.async = true; el.src = "https://makerbadge.com/shim.js";
+            var before = d.getElementsByTagName('script')[0]; before.parentNode.insertBefore(el, before);
+        })(window, document);
+        makerbadge.init({ clientId: "d99137e9-ad0d-4d55-b23e-76e129def979", position: "left" });
+    </script>
 
-    
-       <p>Hi, I'm Nic! I'm a sophomore at The College of New Jersey, majoring in Economics (B.A), with a specialization in Computer Science. With a strong foundation in macroeconomics and a passion for community-building, I thrive in collaborative environments that drive positive change. I enjoy connecting with driven individuals who share a vision for impactful projects. I'm proficient in English, conversational in Italian, and just beginning to learn Chinese. Feel free to reach out if you'd like to discuss ideas, opportunities, or anything in between.</p>
+    <!-- ===== IONICONS ===== -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 
-       <!-- Work Experience Section -->
-       <section class="section">
-           <h2>Work Experience</h2>
-           <div class="experience">
-               <h3><a href="https://jobs.bestbuy.com/bby?id=career_area&content_id=a659e9a11b82b010b4c011f18c4bcb1e&site=retail&spa=1&s=req_id_num&country=US&career_site=" target="_blank">Best Buy, Co</a></h3>
-               <p><strong>October 2022 - Present</strong> - Retail Sales Associate</p>
-               <p>Selling computers, providing exceptional customer service, unloading trucks, and tidying products throughout the store.</p>
-           </div>
-           <div class="experience">
-               <h3>NeonFuze</h3>
-               <p><strong>October 2021 - July 2023</strong> - Entrepreneur</p>
-               <p>Co-founded and scaled an e-commerce business to over $20,000 in revenue, achieving top-rated seller status on eBay with 100+ transactions. Mastered online arbitrage, led strategic negotiations, and developed a robust financial tracking system—all while delivering exceptional customer service.</p>
-           </div>
-           <div class="experience">
-               <h3>Operations Manager</h3>
-               <p><strong>July 2020 - Present</strong> - Self-Employed</p>
-               <p><a href="operationsmanager.png" target="_blank">Operations manager for a friend's local reselling business startup, overseeing orders and statistics for the business, as well as assisting in the purchase of high-demand sneakers for resale.</a></p> <!-- Updated the path to 'other_files/' -->
-           </div>
-       </section>
+    <!-- ===== MAIN JS ===== -->
+    <script src="js/main.js"></script>
 
-       <!-- Education Section -->
-       <section class="section">
-           <h2>Education</h2>
-           <div class="education">
-               <h3><a href="https://www.princetonk12.org/princeton-high-school" target="_blank">Princeton High School</a></h3>
-               <p><strong>Class of 2023</strong></p>
-           </div>
-           <div class="education">
-               <h3><a href="https://www.economics.ox.ac.uk/home" target="_blank">University of Oxford</a></h3>
-               <p><strong>Class of 2027</strong></p>
-               <p>Economics A.B, Minor in Computer Science</p>
-               <p><em>Disclaimer: Not the current school</em></p>
-           </div>
-       </section>
+    <nav class="navigation">
+        <a href="#" class="logo">
+            <img src="https://cdn.discordapp.com/avatars/771030287122432000/cd36dfae5dc071c680436c7ffb442017.png" alt="Flame Bot Logo">
+        </a>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://flamebot.gitbook.io/flame-bot/" target="_blank">Commands</a></li>
+            <li><a href="https://discord.gg/FCP2HWksBU" target="_blank">Join us on Discord</a></li>
+            <li><a href="https://top.gg/bot/796279185080582185/vote" target="_blank">Vote</a></li>
+        </ul>
+        <a href="https://dsc.gg/flamebot" class="hire-me" target="_blank">
+            Invite Me
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </nav>
 
-       <!-- Certifications Section -->
-       <section class="section">
-           <h2>Certifications</h2>
-           <p>CS50 | Introduction to Computer Science | Certificate of Excellence</p>
-           <p>Harvard University</p>
-           <img src="images/harvard_logo.png" alt="Harvard Logo" class="certification-image"> <!-- Added an example image -->
-       </section>
+    <section id="main">
+        <div class="main-text" data-aos="fade-up">
+            <h1>FLAME BOT</h1>
+            <p>Flame Bot is a multipurpose bot with Moderation, Leveling System, Fun commands, Utility Commands, Giveaways command, Music, and more!</p>
+            <div class="main-btns">
+                <a href="https://dsc.gg/flamebot" target="_blank" class="download-cv-btn">Invite Me</a>
+                <a href="https://discord.gg/FCP2HWksBU" target="_blank" class="hire-me-btn">Support Server</a>
+            </div>
+        </div>
+        <div class="model">
+            <img src="https://www.pngarts.com/files/3/Technology-PNG-Image-Background.png" data-aos="fade-up" alt="Technology Background">
+        </div>
+    </section>
 
-       <!-- Skills Section -->
-       <section class="section">
-           <h2>Skills</h2>
-           <p>English (Native), Italian (Conversational), and learning Chinese.</p>
-       </section>
+    <!-- About -->
+    <section id="about">
+        <div class="about-text-section" data-aos="fade-up">
+            <div class="skill-heading" data-aos="fade-up">
+                <span>About Flame Bot</span>
+                <p>Flame Bot was made by Javascript v12 Language, is a multi-purpose and a user-friendly bot which gives you a lot of fun commands, Utility Commands! Moderation Commands! and more!</p>
+            </div>
+            <div class="s-box-container">
+                <div class="skill-box" data-aos="fade-up">
+                    <div class="s-box-icon"><i>1</i></div>
+                    <div class="s-box-text">
+                        <strong>Name</strong>
+                        <p>Flame Bot (796279185080582185)</p>
+                    </div>
+                </div>
+                <div class="skill-box" data-aos="fade-up">
+                    <div class="s-box-icon"><i>2</i></div>
+                    <div class="s-box-text">
+                        <strong>Version</strong>
+                        <p>1.5.8</p>
+                    </div>
+                </div>
+                <div class="skill-box" data-aos="fade-up">
+                    <div class="s-box-icon"><i>3</i></div>
+                    <div class="s-box-text">
+                        <strong>Bot library</strong>
+                        <p>Discord.js (Javascript)</p>
+                    </div>
+                </div>
+                <div class="skill-box" data-aos="fade-up">
+                    <div class="s-box-icon"><i>4</i></div>
+                    <div class="s-box-text">
+                        <strong>Default Prefix</strong>
+                        <p>f!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aisle>
+            <div class="skill-img" data-aos="fade-up">
+                <img src="https://cdn.discordapp.com/attachments/771030287122432000/796279248914401556/flame_2.png" alt="Flame Bot">
+            </div>
+        </aisle>
+    </section>
 
-       <!-- Current Activities Section -->
-       <section class="section">
-           <h2>What Am I Doing Now?</h2>
-           <p>
-               Building: Polymath brain, resume builder<br>
-               Writing: Personal and College Essay<br>
-               Reading: <em>Financial Econometric Modeling</em>; Stan Hurn, Vance L. Martin, Jun Yu, and Peter C.B. Phillips<br>
-               Studying: Math, Coding, and Economics.
-           </p>
-       </section>
+    <!-- Introduction -->
+    <section id="introduction">
+        <div class="skill-heading" data-aos="fade-up">
+            <span>Introduction</span>
+            <p>The introduction of Flame Bot that you can use as a fun bot for your server with many commands that you might need and also with a user-friendly interface.</p>
+        </div>
+        <div class="skill-img" data-aos="fade-up">
+            <img src="https://cdn.discordapp.com/attachments/796358841038143488/796414546470105600/Flame_Bot_Intro.png" alt="Flame Bot Introduction">
+        </div>
+    </section>
 
-       <!-- Achievements Section -->
-       <section class="section">
-           <h2>What Have I Done? (Me in 10 Seconds)</h2>
-           <p>
-               Traveled across Europe, visiting 25 countries, including Russia, and explored Belize and Colombia in South America. Yet to visit Asia and Africa.<br>
-               Read a book a week for an entire year.<br>
-               Perfect attendance throughout middle and high school (except during COVID) and the first year of college.<br>
-               Ran a marathon with two weeks' notice.<br>
-               Built 3 computers for friends after researching computers for a month; mastered troubleshooting and building computer hardware.
-           </p>
-           <a href="secondpageofupdatedwebsite.html">More about me</a>
-       </section>
+    <!-- Features -->
+    <section id="Features">
+        <div class="skill-heading" data-aos="fade-up">
+            <span>Features</span>
+            <p>Flame Bot comes with a lot of features that make it the perfect bot for your Discord server. From moderation tools to fun commands, you will find everything you need here.</p>
+        </div>
+        <div class="feature-box" data-aos="fade-up">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="lock-open-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Moderation</h4>
+                    <p>Efficient tools for server moderation to help you keep your server organized and safe.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="medal-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Leveling System</h4>
+                    <p>Engage your community with a leveling system that rewards active users.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="happy-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Fun Commands</h4>
+                    <p>Various fun commands to keep your server entertained and lively.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Utility Commands</h4>
+                    <p>Handy utility commands to make managing your server easier.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="gift-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Giveaways</h4>
+                    <p>Run giveaways to reward your server members and keep the excitement high.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <ion-icon name="musical-notes-outline"></ion-icon>
+                </div>
+                <div class="feature-text">
+                    <h4>Music</h4>
+                    <p>Enjoy high-quality music playback with the integrated music commands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-       <!-- Mini Projects Section -->
-       <hr>
-       <section class="section projects-section">
-           <h2>projects</h2>
-           <ul>
-               <li><strong>PcPartPicker (Python):</strong> <a href="https://github.com/niccoding101/AbetoneTechnologies/blob/main/PCPartPicker.py" target="_blank">Link to Github</a></li>
-               <li><strong>Finance Manager App (Swift):</strong> <a href="https://github.com/niccoding101/FinanceManager.app" target="_blank">Link to Github</a></li>
-               <p>
-                    <a href="SSNDataBase.html#Technical-Writing" class="back-button">SSN Database Using C++</a>
-               </p>
-               </p> This proejct demonstrate how to create a simulated SSN database using C++.</p> 
-           <a href="Project1.practicingmatrices.html" class="back-button">Matrices in C++</a>
-           </ul>
-       </section>
+    <!-- Developer -->
+    <section id="client">
+        <div class="skill-heading" data-aos="fade-up">
+            <span>Developer</span>
+            <p>Flame Bot is developed by our dedicated team to provide you with the best experience. You can check out more about our development and contributors here.</p>
+        </div>
+        <div class="developer-box" data-aos="fade-up">
+            <div class="developer-item">
+                <div class="developer-img">
+                    <img src="https://cdn.discordapp.com/avatars/795746951120226315/0153800b1684c638c4ea6c7cccbf19e5.png" alt="Developer">
+                </div>
+                <div class="developer-text">
+                    <h4>Flame Dev</h4>
+                    <p>The mastermind behind Flame Bot. Dedicated to providing the best bot experience on Discord.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-       <footer>
-           <p>© 2024 Nicolas DeTroia</p>
-       </footer>
-   </div>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Flame Bot. All rights reserved. | <a href="https://dsc.gg/flamebot" target="_blank">Invite Me</a> | <a href="https://discord.gg/FCP2HWksBU" target="_blank">Support Server</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const navbar = document.getElementById('navbar');
+            
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
