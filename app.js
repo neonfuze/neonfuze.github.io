@@ -1,25 +1,59 @@
-const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+// Scroll function from Donovan Hutchinson's Level Up Your CSS Animation Skills Udemy course
+// Detect request animation frame
+const scroll =
+  window.requestAnimationFrame ||
+  // IE Fallback
+  function (callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
+const elementsToShow = document.querySelectorAll(".show-on-scroll");
 
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
-});
+function loop() {
+  elementsToShow.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      element.classList.add("is-visible");
+    } else {
+      element.classList.remove("is-visible");
+    }
+  });
 
-document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 250) {
-		header.style.backgroundColor = '#29323c';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
-});
+  scroll(loop);
+}
 
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
+// Call the loop for the first time
+loop();
+
+// Helper function from: http://stackoverflow.com/a/7557433/274826
+function isElementInViewport(el) {
+  // special bonus for those using jQuery
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
+  }
+  const rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0 && rect.bottom >= 0) ||
+    (rect.bottom >=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight)) ||
+    (rect.top >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+// Smooth scroll function
+const headerBtn = document.getElementById("header-btn");
+const socialContact = document.getElementById("social-contact");
+const contactForm = document.getElementById("contact");
+
+function scrollToForm() {
+  contactForm.scrollIntoView({ behavior: "smooth" }); // Top
+}
+
+headerBtn.addEventListener("click", scrollToForm);
+socialContact.addEventListener("click", scrollToForm);
+
+// No bots!
+const contactFormNoBots = document.getElementById("contact-form-no-bots");
+contactFormNoBots.parentNode.removeChild(contactFormNoBots);
