@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SSN Database Project</title>
+   <!-- Link to the external CSS file -->
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="container">
+       <a href="updatedwebsite1.html" class="back-button">Back to Main Page</a>
+       <h1>SSN Database Using C++</h1>
+       <div class="disclaimer">
+           <p><em>"For legal purposes, this project does not use real Social Security Numbers and is just a simulation."</em></p>
+       </div>
+
+       <h2 id="project-explanation">Project Explanation</h2>
+       <p>This project demonstrates how to create a simulated Social Security Number (SSN) database using C++. The database is designed to generate and manage fake SSNs for testing purposes. The system includes functionalities such as adding, retrieving, and validating SSNs.</p>
+
+       <h2 id="technical-details">Technical Details</h2>
+
+       <h3>Main Program (`main.cpp`)</h3>
+       <p>The main program processes a file containing operations to be performed on the SSN database. Each line in the file starts with an operation character ('i' for insert, 'd' for delete, 'r' for retrieve), followed by an SSN and a name. It performs these operations on a hash table and reports statistics on the number of successful insertions, deletions, and retrievals.</p>
+       <ul>
+           <li><strong>Command Line Arguments:</strong> The program expects a filename as a command line argument.</li>
+           <li><strong>Operation Tracking:</strong> Keeps track of valid insertions, deletions, and retrievals.</li>
+           <li><strong>Performance Measurement:</strong> Calculates and displays the elapsed time for processing the file.</li>
+       </ul>
+
+       <h3>Singly Linked List Implementation (`SLL.h`)</h3>
+       <p>Implements a singly linked list to store nodes, where each node holds an SSN and a name. This linked list is used within the hash table to handle collisions.</p>
+       <ul>
+           <li><strong>Insertion:</strong> Adds nodes to the list if the SSN is not already present.</li>
+           <li><strong>Search:</strong> Finds and returns a node with a specific SSN.</li>
+           <li><strong>Removal:</strong> Deletes a node with a specific SSN.</li>
+           <li><strong>Display:</strong> Outputs the SSNs of all nodes in the list.</li>
+       </ul>
+
+       <h3>Node Structure (`node.h`)</h3>
+       <p>Defines the structure of a node used in the singly linked list. Each node contains an SSN, a name, and a pointer to the next node.</p>
+       <ul>
+           <li><strong>Data Storage:</strong> Holds SSN and name.</li>
+           <li><strong>Pointer:</strong> Points to the next node in the list.</li>
+       </ul>
+
+       <h3>Hash Table Implementation (`hashTable.h`)</h3>
+       <p>Implements a hash table using an array of singly linked lists. This table is used to store and manage SSNs and their associated names.</p>
+       <ul>
+           <li><strong>Insertion:</strong> Adds key-value pairs to the table based on the hashed value of the key.</li>
+           <li><strong>Search:</strong> Finds whether a specific SSN exists in the table.</li>
+           <li><strong>Deletion:</strong> Removes a key-value pair from the table.</li>
+           <li><strong>Size Calculation:</strong> Returns the total number of nodes in the table.</li>
+       </ul>
+
+       <hr>
+       <p>Reference: Jikai Li, Professor of Computer Science, The College of New Jersey. February 2024</p>
+
+       <h2>Download the Code</h2>
+       <p>You can download the zip file containing the source code for this project:</p>
+       <div class="link-container">
+           <a href="Project4.zip" download>Download Zip File</a>
+           <span class="vertical-line"></span>
+           <a href="youtube.com/Troja885" download>Video Explanation</a>
+           <span class="vertical-line"></span>
+           <a href="updatedwebsite1.html#technical-details">Back to Main Page</a>
+       </div>
+   </div>
+
+   <script>
+       // Save the scroll position before leaving the page
+       window.addEventListener('beforeunload', function() {
+           localStorage.setItem('scrollPosition', window.scrollY);
+       });
+
+       // Restore the scroll position when the page loads
+       window.addEventListener('load', function() {
+           const scrollPosition = localStorage.getItem('scrollPosition');
+           if (scrollPosition) {
+               window.scrollTo(0, parseInt(scrollPosition));
+               localStorage.removeItem('scrollPosition');
+           }
+       });
+   </script>
+</body>
+</html>
