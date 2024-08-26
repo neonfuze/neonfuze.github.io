@@ -3,4 +3,4 @@
 Still in Development 8/26/2024
 
 
-inspiration: Aidan Andrews
+inspiration: https://linkedin.com/in/aidanandrewss
