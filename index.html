@@ -59,8 +59,23 @@
     <p>I developed advanced Natural Language Processing (NLP) systems, focusing on optimizing Retrieval-Augmented Generation (RAG) and enhancing intent classification. I designed and implemented a novel "wavular" RAG approach and a hybrid embedding-based classification system, demonstrating proficiency in...</p>
 </div>
 
-<!-- Link to your external JavaScript file -->
-<script src="script.js"></script>
+<script// JavaScript to handle tab switching
+document.querySelectorAll('.tab-link').forEach(tab => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+        document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+
+        this.classList.add('active');
+        const targetSection = this.getAttribute('href').substring(1);
+        document.getElementById(targetSection).style.display = 'block';
+    });
+});
+
+// Set initial visibility for content sections
+document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+document.getElementById('about').style.display = 'block'; // Show "About" section by default
+</script>
     
 </body>
 </html>
