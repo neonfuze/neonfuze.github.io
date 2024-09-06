@@ -1,4 +1,4 @@
-# Portfolio Website Project
+# Personal (Resume) Portfolio Project
 
 Still in Development 9/6/2024
 
