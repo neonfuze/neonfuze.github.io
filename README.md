@@ -6,6 +6,7 @@ September 6, 2024 - Domain: https://nicolasdetroia.com is up. Figuring out how t
 
 September 7, 2024 - Updated html file and the website is currently down. Will be getting it up within 24-48 hours.
 
+September 14, 2024 - In the midst of fixing the projects section accordingly.
 
 inspiration: 
 https://www.linkedin.com/in/midudev/
