@@ -8,6 +8,9 @@ September 7, 2024 - Updated html file and the website is currently down. Will be
 
 September 14, 2024 - In the midst of fixing the projects section accordingly.
 
+September 24, 2024 - Website blocked on eduroam wifi networks.
+just will have to give it a couple of months.
+
 inspiration: 
 https://www.linkedin.com/in/midudev/
 https://github.com/midudev
