@@ -1,6 +1,6 @@
 # Personal (Resume) Portfolio Project
 
-**Still in Development** (Last updated: 09/06/2024)
+**Still in Development** (Last updated: 09/25/2024)
 
 Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](https://www.nicolasdetroia.com). This project showcases my work and skills in web development, utilizing various technologies and protocols.
 
