@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Personal Finance Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f3e7; /* Cream color */
+            color: #333; /* Dark text for contrast */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333; /* Darker text for headings */
+        }
+        input, select {
+            width: calc(100% - 16px);
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #f5f5f5; /* Light background for inputs */
+            color: #333; /* Dark text */
+            border: 2px solid #1e1e1e; /* Matte black border */
+            border-radius: 5px;
+        }
+        button {
+            background-color: #1e1e1e; /* Matte black */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #333; /* Slightly lighter matte black on hover */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        th, td {
+            border: 1px solid #1e1e1e; /* Matte black border */
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #1e1e1e; /* Matte black headers */
+            color: #fff;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #1e1e1e; /* Matte black border */
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff; /* White section background */
+        }
+        #financeChart {
+            background-color: #f5f3e7; /* Cream chart background */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Monthly Personal Finance Tracker</h1>
+        
+        <div id="incomeSection" class="section">
+            <h2>Income</h2>
+            <div id="incomeInputs">
+                <input type="number" id="incomeAmount" placeholder="Enter income amount">
+                <select id="incomeSource">
+                    <option value="">Select income source</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Investments">Investments</option>
+                    <option value="Rental">Rental Income</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" id="otherIncomeSource" placeholder="Specify other income source" style="display:none;">
+            </div>
+            <button id="addIncomeBtn">Add Income</button>
+        </div>
+        
+        <div id="expenseSection" class="section">
+            <h2>Expenses</h2>
+            <div id="expenseInputs">
+                <input type="number" id="expenseAmount" placeholder="Enter expense amount">
+                <select id="expenseCategory">
+                    <option value="">Select expense category</option>
+                    <option value="Housing">Housing</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Food">Food</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Savings">Savings & Investments</option>
+                    <option value="Personal">Personal Spending</option>
+                    <option value="Recreation">Recreation</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" id="otherExpenseCategory" placeholder="Specify other expense category" style="display:none;">
+            </div>
+            <button id="addExpenseBtn">Add Expense</button>
+        </div>
+
+        <div id="summarySection" class="section">
+            <h2>Financial Summary</h2>
+            <table id="summaryTable">
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="incomeTable"></tbody>
+                <tr>
+                    <td>Total Income</td>
+                    <td id="totalIncome">$0</td>
+                </tr>
+                <tbody id="expenseTable"></tbody>
+                <tr>
+                    <td>Total Expenses</td>
+                    <td id="totalExpenses">$0</td>
+                </tr>
+                <tr>
+                    <td>Net Balance</td>
+                    <td id="netBalance">$0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="financeChart"></canvas>
+        </div>
+        <div id="chartDescription"></div>
+    </div>
+
+    <script>
+        let incomes = [];
+        let expenses = [];
+        let chart;
+
+        function updateSummary() {
+            const totalIncome = incomes.reduce((sum, income) => sum + income.amount, 0);
+            const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+            const netBalance = totalIncome - totalExpenses;
+
+            document.getElementById('totalIncome').textContent = totalIncome.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+            document.getElementById('totalExpenses').textContent = totalExpenses.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+            document.getElementById('netBalance').textContent = netBalance.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+
+            updateChart();
+        }
+
+        function addIncome() {
+            const amountElement = document.getElementById('incomeAmount');
+            const sourceElement = document.getElementById('incomeSource');
+            const otherSourceElement = document.getElementById('otherIncomeSource');
+
+            const amount = parseFloat(amountElement.value);
+            let source = sourceElement.value;
+
+            if (source === 'Other') {
+                source = otherSourceElement.value || 'Unspecified';
+            }
+
+            if (amount && source) {
+                const incomeId = incomes.length;
+                incomes.push({ id: incomeId, amount, source });
+                renderIncomeTable();
+                updateSummary();
+                resetIncomeInputs();
+            } else {
+                alert('Please enter both an income amount and source');
+            }
+        }
+
+        function addExpense() {
+            const amountElement = document.getElementById('expenseAmount');
+            const categoryElement = document.getElementById('expenseCategory');
+            const otherCategoryElement = document.getElementById('otherExpenseCategory');
+
+            const amount = parseFloat(amountElement.value);
+            let category = categoryElement.value;
+
+            if (category === 'Other') {
+                category = otherCategoryElement.value || 'Unspecified';
+            }
+
+            if (amount && category) {
+                const expenseId = expenses.length;
+                expenses.push({ id: expenseId, amount, category });
+                renderExpenseTable();
+                updateSummary();
+                resetExpenseInputs();
+            } else {
+                alert('Please enter both an expense amount and category');
+            }
+        }
+
+        function deleteIncome(id) {
+            incomes = incomes.filter(income => income.id !== id);
+            renderIncomeTable();
+            updateSummary();
+        }
+
+        function deleteExpense(id) {
+            expenses = expenses.filter(expense => expense.id !== id);
+            renderExpenseTable();
+            updateSummary();
+        }
+
+        function renderIncomeTable() {
+            const incomeTable = document.getElementById('incomeTable');
+            incomeTable.innerHTML = '';
+            incomes.forEach(income => {
+                const row = `<tr>
+                    <td>${income.source}</td>
+                    <td>${income.amount.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</td>
+                    <td><button class="delete-btn" onclick="deleteIncome(${income.id})">Delete</button></td>
+                </tr>`;
+                incomeTable.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        function renderExpenseTable() {
+            const expenseTable = document.getElementById('expenseTable');
+            expenseTable.innerHTML = '';
+            expenses.forEach(expense => {
+                const row = `<tr>
+                    <td>${expense.category}</td>
+                    <td>${expense.amount.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</td>
+                    <td><button class="delete-btn" onclick="deleteExpense(${expense.id})">Delete</button></td>
+                </tr>`;
+                expenseTable.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        function resetIncomeInputs() {
+            document.getElementById('incomeAmount').value = '';
+            document.getElementById('incomeSource').value = '';
+            document.getElementById('otherIncomeSource').value = '';
+            document.getElementById('otherIncomeSource').style.display = 'none';
+        }
+
+        function resetExpenseInputs() {
+            document.getElementById('expenseAmount').value = '';
+            document.getElementById('expenseCategory').value = '';
+            document.getElementById('otherExpenseCategory').value = '';
+            document.getElementById('otherExpenseCategory').style.display = 'none';
+        }
+
+        function updateChart() {
+            const ctx = document.getElementById('financeChart').getContext('2d');
+            const incomeTotal = incomes.reduce((sum, income) => sum + income.amount, 0);
+            const expenseTotal = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Income', 'Expenses'],
+                    datasets: [{
+                        data: [incomeTotal, expenseTotal],
+                        backgroundColor: ['#4CAF50', '#f44336']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+
+            const description = `The pie chart shows the breakdown of your total income (${incomeTotal.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}) versus your total expenses (${expenseTotal.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}).`;
+            const analysis = incomeTotal > expenseTotal
+                ? `You are currently saving ${(incomeTotal - expenseTotal).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}.`
+                : `You are currently overspending by ${(expenseTotal - incomeTotal).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}.`;
+            
+            document.getElementById('chartDescription').textContent = `${description} ${analysis}`;
+        }
+
+        document.getElementById('addIncomeBtn').addEventListener('click', addIncome);
+        document.getElementById('addExpenseBtn').addEventListener('click', addExpense);
+
+        document.getElementById('incomeSource').addEventListener('change', function() {
+            if (this.value === 'Other') {
+                document.getElementById('otherIncomeSource').style.display = 'block';
+            } else {
+                document.getElementById('otherIncomeSource').style.display = 'none';
+            }
+        });
+
+        document.getElementById('expenseCategory').addEventListener('change', function() {
+            if (this.value === 'Other') {
+                document.getElementById('otherExpenseCategory').style.display = 'block';
+            } else {
+                document.getElementById('otherExpenseCategory').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
