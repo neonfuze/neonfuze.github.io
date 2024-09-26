@@ -8,11 +8,7 @@ Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](https://
 
 - **September 6, 2024**: Domain [https://nicolasdetroia.com](https://nicolasdetroia.com) is up. Currently figuring out how to fix a failing redirect error page on Netlify with a `_redirects` folder. More information will be added to the website shortly.
   
-- **September 7, 2024**: Updated the HTML file; the website is currently down. It will be back up within 24-48 hours.
-  
-- **September 14, 2024**: In the midst of fixing the projects section accordingly.
-  
-- **September 24, 2024**: Website blocked on eduroam Wi-Fi networks. Just need to give it a couple of months.
+- **September 25, 2024**: Updated the HTML file; the website is currently down. Currently fixing will be back up within 48 hours.
 
 ## Technologies Used
 
