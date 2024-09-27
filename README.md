@@ -1,6 +1,6 @@
-# Personal (Resume) Portfolio Project
+# Personal Portfolio Project
 
-**Still in Development** (Last updated: 09/25/2024)
+**Taken Down** (Last updated: 09/27/2024)
 
 Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](https://www.nicolasdetroia.com). This project showcases my work and skills in web development, utilizing various technologies and protocols.
 
@@ -8,7 +8,7 @@ Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](https://
 
 - **September 6, 2024**: Domain [https://nicolasdetroia.com](https://nicolasdetroia.com) is up. Currently figuring out how to fix a failing redirect error page on Netlify with a `_redirects` folder. More information will be added to the website shortly.
   
-- **September 25, 2024**: Updated the HTML file; the website is currently down. Currently fixing will be back up within 48 hours.
+- **September 27, 2024**: Site temporarily down for transfer to a new, simpler platform. Back soon.
 
 ## Technologies Used
 
