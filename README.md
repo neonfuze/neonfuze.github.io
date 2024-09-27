@@ -2,7 +2,7 @@
 
 **Taken Down** (Last updated: 09/27/2024)
 
-Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](https://www.nicolasdetroia.com). This project showcases my work and skills in web development, utilizing various technologies and protocols.
+Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](nicolasdetroia.github.io/index.html). This project showcases my work and skills in web development, utilizing various technologies and protocols.
 
 ## Development Timeline
 
