@@ -2,11 +2,11 @@
 
 **Taken Down** (Last updated: 09/27/2024)
 
-Welcome to my portfolio website, accessible at [www.nicolasdetroia.com](nicolasdetroia.github.io/index.html). This project showcases my work and skills in web development, utilizing various technologies and protocols.
+Welcome to my portfolio website, accessible at [nicolasdetroia.github.io/index.html](nicolasdetroia.github.io/index.html). This project showcases my work and skills in web development, utilizing various technologies and protocols.
 
 ## Development Timeline
 
-- **September 6, 2024**: Domain [https://nicolasdetroia.com](https://nicolasdetroia.com) is up. Currently figuring out how to fix a failing redirect error page on Netlify with a `_redirects` folder. More information will be added to the website shortly.
+- **September 6, 2024**: Currently figuring out how to fix a failing redirect error page on Netlify with a `_redirects` folder. More information will be added to the website shortly.
   
 - **September 27, 2024**: Site temporarily down for transfer to a new, simpler platform. Back soon.
 
